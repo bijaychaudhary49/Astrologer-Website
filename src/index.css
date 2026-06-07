@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+/* ─── Custom Theme ─── */
+@theme {
+  /* Dark mode colors */
+  --color-cosmic-navy: #0b1026;
+  --color-royal-purple: #6042ca;
+  --color-royal-purple-light: #7a5de4;
+  --color-celestial-gold: #ffffff;
+  --color-celestial-gold-light: #ffffff;
+  --color-midnight-blue: #141b2b;
+  --color-dark-indigo: #1e2545;
+  --color-dark-indigo-light: #293040;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 9999px;
+  /* Only keep full for perfect circles like WhatsApp button/icons */
+
+  /* Font families */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-slide-up: slideUp 0.6s ease-out forwards;
+  --animate-slide-down: slideDown 0.3s ease-out forwards;
+  --animate-scale-in: scaleIn 0.3s ease-out forwards;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(96, 66, 202, 0.2), 0 0 10px rgba(96, 66, 202, 0.1);
+  }
+
+  to {
+    box-shadow: 0 0 15px rgba(96, 66, 202, 0.4), 0 0 30px rgba(96, 66, 202, 0.2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ─── Base Styles ─── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Light mode (default) */
+  :root {
+    --bg-primary: #ffffff;
+    --bg-surface: #f9f9ff;
+    --bg-surface-hover: #f1f3ff;
+    --text-primary: #141b2b;
+    --text-secondary: #46464d;
+    --text-muted: #77767e;
+    --border-color: #c7c5ce;
+    --shadow-color: rgba(20, 27, 43, 0.05);
+    --shadow-lg: rgba(20, 27, 43, 0.08);
+    --overlay: rgba(20, 27, 43, 0.5);
+    --gradient-hero: linear-gradient(135deg, #f9f9ff 0%, #e9edff 100%);
+  }
+
+  /* Dark mode */
+  .dark {
+    --bg-primary: #141b2b;
+    --bg-surface: #293040;
+    --bg-surface-hover: #585d77;
+    --text-primary: #edf0ff;
+    --text-secondary: #c7c5ce;
+    --text-muted: #77767e;
+    --border-color: #585d77;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-lg: rgba(0, 0, 0, 0.4);
+    --overlay: rgba(0, 0, 0, 0.7);
+    --gradient-hero: linear-gradient(135deg, #141b2b 0%, #293040 50%, #141b2b 100%);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}
+
+/* ─── Utility Classes ─── */
+@utility bg-primary {
+  background-color: var(--bg-primary);
+}
+
+@utility bg-surface {
+  background-color: var(--bg-surface);
+}
+
+@utility bg-surface-hover {
+  background-color: var(--bg-surface-hover);
+}
+
+@utility text-primary {
+  color: var(--text-primary);
+}
+
+@utility text-secondary {
+  color: var(--text-secondary);
+}
+
+@utility text-muted {
+  color: var(--text-muted);
+}
+
+@utility border-theme {
+  border-color: var(--border-color);
+}
+
+@utility shadow-theme {
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+@utility shadow-theme-lg {
+  box-shadow: 0 20px 40px var(--shadow-lg);
+}
+
+@utility shadow-glow-whatsapp {
+  box-shadow: 0 10px 30px rgba(91, 60, 196, 0.3);
+}
+
+@utility bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+@utility bg-overlay {
+  background-color: var(--overlay);
+}
+
+@utility constellation-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(91, 60, 196, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+@layer components {
+  .input-underline {
+    border: none;
+    border-bottom: 1px solid #77767e;
+    background: transparent;
+    padding: 8px 0;
+    width: 100%;
+    outline: none;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease;
+  }
+  .input-underline:focus {
+    outline: none;
+    border-bottom: 2px solid var(--color-royal-purple);
+    box-shadow: none;
+  }
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5B3CC4;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: rgba(91, 60, 196, 0.3);
+  color: var(--text-primary);
+}
