@@ -41,7 +41,7 @@ Message: ${form.message}`;
         <div className="relative bg-gradient-to-r from-royal-purple to-cosmic-navy p-6">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+            className="absolute top-4 right-4 text-white/70 hover:text-white hover:rotate-90 transition-all duration-300 transform origin-center"
             aria-label="Close modal"
           >
             <HiOutlineX size={24} />
@@ -50,7 +50,7 @@ Message: ${form.message}`;
             Book Consultation
           </h3>
           <p className="text-sm text-white/70 mt-1">{service.name}</p>
-          <p className="text-royal-purple font-semibold mt-2">
+          <p className="text-white font-semibold mt-2">
             ₹{service.price.toLocaleString()}
           </p>
         </div>
@@ -114,7 +114,7 @@ Message: ${form.message}`;
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md transition-all duration-300 hover:shadow-theme-lg active:scale-[0.98] mt-8"
+            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98] mt-8"
           >
             <FaWhatsapp size={20} />
             Book via WhatsApp

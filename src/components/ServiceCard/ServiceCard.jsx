@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import BookingModal from "../BookingModal/BookingModal";
 
 const iconMap = {
@@ -27,20 +28,21 @@ const ServiceCard = ({ service }) => {
   return (
     <>
       <div className="bg-white p-10 border border-theme hover:shadow-theme-lg transition-all duration-500 group flex flex-col h-full">
-        {/* Icon */}
-        <span className="material-symbols-outlined text-royal-purple text-4xl mb-6 inline-block">
-          {iconName}
-        </span>
+        {/* Icon & Content wrapped in a link */}
+        <Link to={`/services/${service.id}`} className="flex-1 block outline-none">
+          {/* Icon */}
+          <span className="material-symbols-outlined text-royal-purple text-4xl mb-6 inline-block">
+            {iconName}
+          </span>
 
-        {/* Content */}
-        <div className="flex-1">
-          <h3 className="font-heading text-2xl font-bold text-primary mb-4">
+          {/* Content */}
+          <h3 className="font-heading text-2xl font-bold text-primary mb-4 group-hover:text-royal-purple transition-colors">
             {service.name}
           </h3>
           <p className="text-secondary leading-relaxed mb-8 line-clamp-4">
             {service.description}
           </p>
-        </div>
+        </Link>
 
         {/* Footer */}
         <div className="mt-auto pt-2 flex items-center justify-between">
@@ -49,7 +51,7 @@ const ServiceCard = ({ service }) => {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="text-[10px] uppercase tracking-widest font-semibold text-royal-purple group-hover:gap-3 transition-all flex items-center gap-2"
+            className="text-[10px] uppercase tracking-widest font-semibold text-royal-purple hover:text-cosmic-navy group-hover:gap-3 transition-all flex items-center gap-2"
             id={`book-btn-${service.id}`}
           >
             BOOK NOW <span className="material-symbols-outlined text-sm">chat</span>

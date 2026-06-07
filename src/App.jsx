@@ -16,6 +16,7 @@ import Insights from "./pages/Insights/Insights";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import Contact from "./pages/Contact/Contact";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import ServiceDetail from "./pages/ServiceDetail/ServiceDetail";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/:id" element={<ServiceDetail />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:id" element={<ArticleDetail />} />

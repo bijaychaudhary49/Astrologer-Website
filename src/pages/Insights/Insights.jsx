@@ -7,15 +7,22 @@ import { articles, articleCategories } from "../../data/articles";
 const Insights = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState("Latest");
 
-  const filteredArticles = articles.filter((article) => {
-    const matchCategory =
-      activeCategory === "All" || article.category === activeCategory;
-    const matchSearch =
-      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      article.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchCategory && matchSearch;
-  });
+  const filteredArticles = articles
+    .filter((article) => {
+      const matchCategory =
+        activeCategory === "All" || article.category === activeCategory;
+      const matchSearch =
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchCategory && matchSearch;
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return sortOrder === "Latest" ? dateB - dateA : dateA - dateB;
+    });
 
   const featuredArticle = filteredArticles.find((a) => a.featured);
   const remainingArticles = filteredArticles.filter(
@@ -62,22 +69,24 @@ const Insights = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-semibold uppercase tracking-widest pb-4 whitespace-nowrap transition-colors ${
-                activeCategory === cat
-                  ? "text-royal-purple border-b-2 border-royal-purple -mb-[18px]"
-                  : "text-muted hover:text-primary"
-              }`}
+              className={`text-xs font-semibold uppercase tracking-widest pb-2 whitespace-nowrap transition-colors ${activeCategory === cat
+                ? "text-royal-purple border-b-2 border-royal-purple"
+                : "text-muted hover:text-primary"
+                }`}
             >
               {cat.toUpperCase()}
             </button>
           ))}
         </div>
-        <div className="flex items-center gap-2 text-muted mb-4 md:mb-0">
+        <button 
+          onClick={() => setSortOrder(sortOrder === "Latest" ? "Oldest" : "Latest")}
+          className="flex items-center gap-2 text-muted mb-4 md:mb-0 hover:text-primary transition-colors cursor-pointer"
+        >
           <span className="material-symbols-outlined text-sm">sort</span>
           <span className="text-xs font-semibold uppercase tracking-widest">
-            LATEST FIRST
+            {sortOrder} FIRST
           </span>
-        </div>
+        </button>
       </div>
 
       {/* ═══ BLOG GRID ═══ */}

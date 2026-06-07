@@ -75,7 +75,7 @@ const Home = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-theme text-primary font-semibold rounded transition-all duration-300 hover:shadow-theme-lg active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white active:scale-[0.98]"
                   id="hero-cta-services"
                 >
                   Explore Services
@@ -85,7 +85,7 @@ const Home = () => {
                   href="https://wa.me/9779821057199"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-cosmic-navy hover:bg-cosmic-navy/90 text-white font-semibold rounded transition-all duration-300 shadow-theme hover:shadow-theme-lg active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-cosmic-navy border-2 border-cosmic-navy text-white font-semibold rounded btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98]"
                   id="hero-cta-whatsapp"
                 >
                   <FaWhatsapp size={20} />
@@ -152,7 +152,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-theme text-primary hover:bg-surface-hover font-semibold rounded transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white"
             >
               View All Services
               <BsArrowRight />
@@ -288,7 +288,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-theme text-primary hover:bg-surface-hover font-semibold rounded transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white"
             >
               View All Articles
               <BsArrowRight />
@@ -297,34 +297,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ═══ CTA SECTION ═══ */}
-      <section className="py-32 bg-gradient-to-r from-cosmic-navy via-dark-indigo to-cosmic-navy" id="cta">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <BsStars className="text-royal-purple text-4xl mx-auto mb-6" />
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-soft-ivory mb-4">
-            Ready to Discover Your Cosmic Path?
-          </h2>
-          <p className="text-soft-ivory/70 mb-8 max-w-2xl mx-auto">
-            Take the first step towards understanding your destiny. Connect with
-            Guruji today for a personalized astrology consultation.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/9779821057199"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-royal-purple hover:bg-royal-purple-light text-white font-semibold rounded transition-all duration-300 shadow-theme hover:shadow-theme-lg"
+      {/* ═══ NEWSLETTER / STAY IN COSMIC ALIGNMENT ═══ */}
+      <section className="py-24 md:py-40 bg-white" id="cta">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-16 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary mb-6">
+              Stay in Cosmic Alignment
+            </h2>
+            <p className="text-lg text-secondary mb-12">
+              Receive weekly lunar reports and exclusive offers directly in your
+              inbox.
+            </p>
+            <form
+              className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-lg mx-auto"
+              onSubmit={(e) => e.preventDefault()}
             >
-              <FaWhatsapp size={20} />
-              Chat on WhatsApp
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-soft-ivory/30 text-soft-ivory hover:bg-soft-ivory/10 font-semibold rounded transition-all duration-300"
-            >
-              Contact Us
-              <BsArrowRight />
-            </Link>
+              <input
+                className="w-full bg-transparent border-0 border-b border-theme py-3 px-2 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
+                placeholder="Email Address"
+                required
+                type="email"
+              />
+              <button className="bg-cosmic-navy text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </section>

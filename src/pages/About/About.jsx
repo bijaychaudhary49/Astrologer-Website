@@ -141,9 +141,8 @@ const About = () => {
               {milestones.map((m, i) => (
                 <div
                   key={m.year}
-                  className={`relative flex items-start gap-8 ${
-                    i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className={`relative flex items-start gap-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Dot */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-royal-purple border-2 border-primary z-10" />
@@ -200,21 +199,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
-      <section className="py-16 bg-gradient-to-r from-royal-purple to-cosmic-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl lg:text-3xl font-bold text-soft-ivory mb-4">
-            Ready to Begin Your Consultation?
-          </h2>
-          <p className="text-soft-ivory/70 mb-8 max-w-xl mx-auto">
-            Connect with Guruji for personalized Vedic astrology guidance.
-          </p>
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-royal-purple hover:bg-royal-purple-light text-cosmic-navy font-semibold rounded transition-all duration-300"
-          >
-            View Our Services
-          </Link>
+      {/* ═══ NEWSLETTER / STAY IN COSMIC ALIGNMENT ═══ */}
+      <section className="py-24 md:py-40 bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-16 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary mb-6">
+              Stay in Cosmic Alignment
+            </h2>
+            <p className="text-lg text-secondary mb-12">
+              Connect with Guruji for personalized Vedic astrology guidance.
+              Receive exclusive insights directly in your inbox.
+            </p>
+            <form
+              className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-lg mx-auto"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input
+                className="w-full bg-transparent border-0 border-b border-theme py-3 px-2 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
+                placeholder="Email Address"
+                required
+                type="email"
+              />
+              <button className="bg-cosmic-navy text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </main>

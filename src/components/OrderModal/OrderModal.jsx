@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 
-const OrderModal = ({ product, qty, onClose }) => {
+const OrderModal = ({ product, qty, onClose, image }) => {
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -43,7 +43,7 @@ Phone: ${form.phone}`;
         <div className="relative bg-gradient-to-r from-royal-purple/90 to-royal-purple p-6">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-cosmic-navy/70 hover:text-cosmic-navy transition-colors"
+            className="absolute top-4 right-4 text-cosmic-navy/70 hover:text-cosmic-navy hover:rotate-90 transition-all duration-300 transform origin-center"
             aria-label="Close modal"
           >
             <HiOutlineX size={24} />
@@ -51,8 +51,12 @@ Phone: ${form.phone}`;
           <h3 className="font-heading text-xl font-bold text-cosmic-navy pr-8">
             Complete Your Order
           </h3>
-          <div className="mt-3 flex items-center gap-3">
-            <span className="text-3xl">{product.image}</span>
+          <div className="mt-3 flex items-center gap-4">
+            <img 
+              src={product.image} 
+              alt={product.name}
+              className="w-16 h-16 object-cover rounded shadow-sm border border-theme" 
+            />
             <div>
               <p className="text-sm font-medium text-cosmic-navy">
                 {product.name}
@@ -129,7 +133,7 @@ Phone: ${form.phone}`;
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md transition-all duration-300 hover:shadow-theme-lg active:scale-[0.98] mt-8"
+            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98] mt-8"
           >
             <FaWhatsapp size={20} />
             Order via WhatsApp

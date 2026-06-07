@@ -222,7 +222,7 @@ Message: ${form.message}`;
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md transition-all duration-300 hover:shadow-theme-lg active:scale-[0.98] mt-8"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98] mt-8"
                 >
                   <FaWhatsapp size={20} />
                   Send Message via WhatsApp

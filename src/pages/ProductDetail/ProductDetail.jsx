@@ -1,8 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { BsArrowRight, BsShieldCheck } from "react-icons/bs";
-import { FiPlus, FiMinus, FiChevronRight } from "react-icons/fi";
 import { products } from "../../data/products";
 
 const ProductDetail = () => {
@@ -22,10 +19,10 @@ const ProductDetail = () => {
           </p>
           <Link
             to="/shop"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-theme text-primary hover:bg-surface-hover font-semibold transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold btn-dwc btn-dwc-fill-dark hover:text-white transition-all duration-300 uppercase tracking-widest text-xs"
           >
             Back to Shop
-            <BsArrowRight />
+            <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </Link>
         </div>
       </main>
@@ -50,7 +47,7 @@ const ProductDetail = () => {
             </Link>
           </li>
           <li>
-            <FiChevronRight size={12} />
+            <span className="material-symbols-outlined text-sm">chevron_right</span>
           </li>
           <li>
             <Link to="/shop" className="hover:text-primary transition-colors">
@@ -58,7 +55,7 @@ const ProductDetail = () => {
             </Link>
           </li>
           <li>
-            <FiChevronRight size={12} />
+            <span className="material-symbols-outlined text-sm">chevron_right</span>
           </li>
           <li className="text-secondary">{product.name}</li>
         </ol>
@@ -114,14 +111,14 @@ const ProductDetail = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-royal-purple text-white w-full py-5 flex items-center justify-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase hover:opacity-90 transition-opacity"
+                className="bg-royal-purple text-white w-full py-5 flex items-center justify-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase border-2 border-royal-purple btn-dwc btn-dwc-fill-light hover:text-royal-purple"
               >
-                <FaWhatsapp size={20} />
+                <span className="material-symbols-outlined">chat_bubble</span>
                 <span>Order via WhatsApp</span>
               </a>
               <Link
                 to="/contact"
-                className="border border-theme text-primary w-full py-5 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-surface-hover transition-colors text-center"
+                className="border-2 border-cosmic-navy text-cosmic-navy w-full py-5 text-xs font-semibold tracking-[0.2em] uppercase text-center btn-dwc btn-dwc-fill-dark hover:text-white"
               >
                 Schedule Astro-Consultation
               </Link>
@@ -130,7 +127,7 @@ const ProductDetail = () => {
             {/* Trust Badge */}
             <div className="p-6 bg-surface-hover border border-theme flex items-center gap-6 mb-12">
               <div className="w-16 h-16 border-2 border-royal-purple flex items-center justify-center shrink-0">
-                <BsShieldCheck className="text-royal-purple text-2xl" />
+                <span className="material-symbols-outlined text-royal-purple text-3xl">verified_user</span>
               </div>
               <div>
                 <h4 className="text-xs font-semibold text-primary uppercase tracking-widest mb-1">
@@ -155,9 +152,9 @@ const ProductDetail = () => {
                       Vedic Properties
                     </span>
                     {openSection === "vedic" ? (
-                      <FiMinus className="text-primary" />
+                      <span className="material-symbols-outlined text-primary">remove</span>
                     ) : (
-                      <FiPlus className="text-primary" />
+                      <span className="material-symbols-outlined text-primary">add</span>
                     )}
                   </button>
                   {openSection === "vedic" && (
@@ -198,9 +195,9 @@ const ProductDetail = () => {
                     Product Details
                   </span>
                   {openSection === "details" ? (
-                    <FiMinus className="text-primary" />
+                    <span className="material-symbols-outlined text-primary">remove</span>
                   ) : (
-                    <FiPlus className="text-primary" />
+                    <span className="material-symbols-outlined text-primary">add</span>
                   )}
                 </button>
                 {openSection === "details" && (
@@ -245,9 +242,9 @@ const ProductDetail = () => {
                     Shipping & Returns
                   </span>
                   {openSection === "shipping" ? (
-                    <FiMinus className="text-primary" />
+                    <span className="material-symbols-outlined text-primary">remove</span>
                   ) : (
-                    <FiPlus className="text-primary" />
+                    <span className="material-symbols-outlined text-primary">add</span>
                   )}
                 </button>
                 {openSection === "shipping" && (
@@ -285,7 +282,7 @@ const ProductDetail = () => {
             </p>
             <div className="flex justify-center gap-12">
               <div className="flex flex-col items-center">
-                <BsShieldCheck className="text-3xl mb-2" />
+                <span className="material-symbols-outlined text-4xl mb-2">auto_awesome</span>
                 <span className="text-xs font-semibold uppercase tracking-widest">
                   Vedic Purity
                 </span>
