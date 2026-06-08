@@ -77,10 +77,10 @@ const Navbar = () => {
           </div>
 
           {/* Right Section */}
-          {/* <div className="flex items-center gap-3">
-            <ThemeToggle />
+          <div className="flex items-center gap-3">
+            {/* <ThemeToggle /> */}
 
-            Mobile Menu Button
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-hover transition-colors"
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <HiOutlineMenuAlt3 size={24} />
               )}
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
 
