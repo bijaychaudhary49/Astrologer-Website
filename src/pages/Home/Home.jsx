@@ -72,10 +72,10 @@ const Home = () => {
                 guidance to navigate life's journey with confidence.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 md:pt-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded-full btn-dwc btn-dwc-fill-dark hover:text-white active:scale-[0.98]"
                   id="hero-cta-services"
                 >
                   Explore Services
@@ -85,7 +85,7 @@ const Home = () => {
                   href="https://wa.me/9779821057199"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-cosmic-navy border-2 border-cosmic-navy text-white font-semibold rounded btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-cosmic-navy border-2 border-cosmic-navy text-white font-semibold rounded-full btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98]"
                   id="hero-cta-whatsapp"
                 >
                   <FaWhatsapp size={20} />
@@ -152,7 +152,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold btn-dwc btn-dwc-fill-dark hover:text-white rounded-full"
             >
               View All Services
               <BsArrowRight />
@@ -209,7 +209,7 @@ const Home = () => {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-royal-purple font-semibold hover:gap-3 transition-all duration-300"
+                className="inline-flex items-center underline gap-2 text-royal-purple font-semibold hover:gap-3 transition-all duration-300"
               >
                 Read Full Story
                 <BsArrowRight />
@@ -288,7 +288,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded btn-dwc btn-dwc-fill-dark hover:text-white"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-cosmic-navy text-cosmic-navy font-semibold rounded-full btn-dwc btn-dwc-fill-dark hover:text-white"
             >
               View All Articles
               <BsArrowRight />
@@ -313,13 +313,13 @@ const Home = () => {
               onSubmit={(e) => e.preventDefault()}
             >
               <input
-                className="w-full bg-transparent border-0 border-b border-theme py-3 px-2 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
+                className="w-full rounded-full bg-transparent border-0 border-b border-theme py-3 px-4 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
                 placeholder="Email Address"
                 required
                 type="email"
               />
-              <button className="bg-cosmic-navy text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
-                Subscribe
+              <button className="bg-cosmic-navy flex justify-center cursor-pointer rounded-full text-white text-xs px-8 py-3.5 font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
+             <span>  Subscribe</span>
               </button>
             </form>
           </div>

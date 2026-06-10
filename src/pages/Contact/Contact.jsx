@@ -29,7 +29,7 @@ Message: ${form.message}`;
   };
 
   return (
-    <main className="pt-20">
+    <main className="">
       {/* ═══ HERO ═══ */}
       <section className="py-16 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -157,7 +157,7 @@ Message: ${form.message}`;
 
               <form onSubmit={handleSubmit} className="space-y-8 mt-8">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-muted mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-2">
                     Your Name
                   </label>
                   <input
@@ -167,11 +167,11 @@ Message: ${form.message}`;
                     onChange={handleChange}
                     required
                     placeholder="Enter your full name"
-                    className="w-full input-underline"
+                    className="w-full input-underline px-4 rounded-full placeholder:text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-muted mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-2">
                     Phone Number (WhatsApp)
                   </label>
                   <input
@@ -181,11 +181,11 @@ Message: ${form.message}`;
                     onChange={handleChange}
                     required
                     placeholder="Your WhatsApp number"
-                    className="w-full input-underline"
+                    className="w-full input-underline px-4 rounded-full placeholder:text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-muted mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-2">
                     Subject
                   </label>
                   <select
@@ -193,7 +193,7 @@ Message: ${form.message}`;
                     value={form.subject}
                     onChange={handleChange}
                     required
-                    className="w-full input-underline text-primary"
+                    className="w-full input-underline px-4 rounded-full placeholder:text-sm text-primary"
                   >
                     <option value="" disabled>
                       Select a topic
@@ -206,7 +206,7 @@ Message: ${form.message}`;
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-muted mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-primary mb-2">
                     Your Message
                   </label>
                   <textarea
@@ -216,13 +216,13 @@ Message: ${form.message}`;
                     required
                     rows={3}
                     placeholder="How can we help you?"
-                    className="w-full input-underline resize-none"
+                    className="w-full input-underline px-4 rounded-[16px] placeholder:text-sm resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold rounded-md border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98] mt-8"
+                  className="w-full flex items-center justify-center cursor-pointer rounded-full gap-2 px-6 py-4 bg-cosmic-navy text-white font-semibold border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy active:scale-[0.98] mt-8"
                 >
                   <FaWhatsapp size={20} />
                   Send Message via WhatsApp

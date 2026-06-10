@@ -17,7 +17,7 @@ const Services = () => {
   });
 
   return (
-    <main className="pt-20">
+    <main className="">
       {/* ═══ HERO ═══ */}
       <section className="py-16 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -38,7 +38,7 @@ const Services = () => {
       </section>
 
       {/* ═══ FILTERS ═══ */}
-      <section className="py-8 bg-surface sticky top-16 lg:top-20 z-30">
+      <section className="py-8 bg-surface z-30">
         <div className="px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-end border-b border-theme pb-4 gap-6">
           {/* Categories */}
           <div className="flex gap-8 overflow-x-auto no-scrollbar w-full sm:w-auto">
@@ -46,7 +46,7 @@ const Services = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`text-xs font-semibold uppercase tracking-widest pb-2 whitespace-nowrap transition-colors ${
+                className={`text-xs font-semibold uppercase tracking-widest pb-2 whitespace-nowrap transition-colors cursor-pointer ${
                   activeCategory === cat
                     ? "text-royal-purple border-b-2 border-royal-purple"
                     : "text-muted hover:text-primary"
@@ -65,7 +65,7 @@ const Services = () => {
               placeholder="Search services..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded bg-primary border border-theme text-primary placeholder-muted text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-primary border border-theme text-primary placeholder-muted text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all rounded-full"
             />
           </div>
         </div>

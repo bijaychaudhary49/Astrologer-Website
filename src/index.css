@@ -11,13 +11,13 @@
   --color-midnight-blue: #141b2b;
   --color-dark-indigo: #1e2545;
   --color-dark-indigo-light: #293040;
-  --radius: 0px;
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-3xl: 0px;
+  --radius: 8px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-sm: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
   --radius-full: 9999px;
   /* Only keep full for perfect circles like WhatsApp button/icons */
 
@@ -277,7 +277,6 @@
     left: 0;
     top: 0;
     bottom: auto;
-    /* border-radius: 50%; */
     width: 100%;
     height: 0;
     z-index: -1;

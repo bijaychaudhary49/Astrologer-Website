@@ -30,7 +30,7 @@ const Insights = () => {
   );
 
   return (
-    <main className="pt-32 pb-24 bg-white">
+    <main className="pt-10 pb-24 bg-white">
       {/* ═══ FEATURED ARTICLE (HERO BANNER) ═══ */}
       {featuredArticle && (
         <section className="px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto mb-20">
@@ -54,7 +54,7 @@ const Insights = () => {
               <p className="text-white/80 leading-relaxed mb-8 text-lg">
                 {featuredArticle.excerpt}
               </p>
-              <button className="border border-white/40 text-white px-8 py-3 hover:bg-white hover:text-primary transition-colors text-xs font-semibold uppercase tracking-widest">
+              <button className="border border-white/40 text-white px-8 py-3 rounded-full hover:bg-white hover:text-primary transition-colors text-xs font-semibold uppercase tracking-widest">
                 READ ARTICLE
               </button>
             </div>
@@ -69,7 +69,7 @@ const Insights = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-semibold uppercase tracking-widest pb-2 whitespace-nowrap transition-colors ${activeCategory === cat
+              className={`text-xs font-semibold uppercase cursor-pointer tracking-widest pb-2 whitespace-nowrap transition-colors ${activeCategory === cat
                 ? "text-royal-purple border-b-2 border-royal-purple"
                 : "text-muted hover:text-primary"
                 }`}
@@ -110,7 +110,7 @@ const Insights = () => {
 
       {/* ═══ NEWSLETTER SECTION ═══ */}
       <section className="mt-32 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
-        <div className="bg-white p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden border border-theme shadow-theme">
+        <div className="bg-white p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden border border-theme shadow-theme rounded-2xl">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-royal-purple/5 rounded-full blur-3xl"></div>
           <div className="max-w-md relative z-10">
             <h2 className="font-heading text-4xl font-bold text-primary mb-4">
@@ -122,15 +122,14 @@ const Insights = () => {
           </div>
           <div className="w-full md:w-auto relative z-10 flex flex-col gap-4">
             <div className="flex flex-col sm:flex-row gap-4 items-end">
-              <div className="flex-grow min-w-[300px]">
-                <input
-                  className="w-full bg-transparent border-0 border-b border-theme py-3 px-0 focus:ring-0 placeholder:text-muted focus:border-royal-purple transition-all text-primary"
-                  placeholder="Your email address"
-                  type="email"
-                />
-              </div>
-              <button className="bg-primary text-white px-10 py-3 text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition-opacity">
-                SUBSCRIBE
+               <input
+                className="w-full rounded-full bg-transparent border-0 border-b border-theme py-3 px-4 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
+                placeholder="Email Address"
+                required
+                type="email"
+              />
+              <button className="bg-cosmic-navy flex justify-center cursor-pointer rounded-full text-white text-xs px-8 py-3.5 font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
+             <span>  Subscribe</span>
               </button>
             </div>
             <p className="text-[10px] text-muted uppercase tracking-tighter">

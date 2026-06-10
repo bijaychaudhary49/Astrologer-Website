@@ -51,7 +51,7 @@ const ServiceCard = ({ service }) => {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="text-[10px] uppercase tracking-widest font-semibold text-royal-purple hover:text-cosmic-navy group-hover:gap-3 transition-all flex items-center gap-2"
+            className="text-[10px] uppercase tracking-widest border px-5 py-2.5 rounded-full cursor-pointer font-semibold text-royal-purple hover:text-cosmic-navy group-hover:gap-3 transition-all flex items-center gap-2"
             id={`book-btn-${service.id}`}
           >
             BOOK NOW <span className="material-symbols-outlined text-sm">chat</span>

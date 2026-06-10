@@ -21,7 +21,7 @@ const values = [
 
 const About = () => {
   return (
-    <main className="pt-20">
+    <main className="">
       {/* ═══ HERO ═══ */}
       <section className="py-20 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -215,13 +215,13 @@ const About = () => {
               onSubmit={(e) => e.preventDefault()}
             >
               <input
-                className="w-full bg-transparent border-0 border-b border-theme py-3 px-2 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
+                className="w-full rounded-full bg-transparent border-0 border-b border-theme py-3 px-4 text-base focus:ring-0 focus:outline-none focus:border-royal-purple transition-colors placeholder:text-muted text-primary text-center sm:text-left"
                 placeholder="Email Address"
                 required
                 type="email"
               />
-              <button className="bg-cosmic-navy text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
-                Subscribe
+              <button className="bg-cosmic-navy flex justify-center cursor-pointer rounded-full text-white text-xs px-8 py-3.5 font-semibold uppercase tracking-widest whitespace-nowrap border-2 border-cosmic-navy btn-dwc btn-dwc-fill-light hover:text-cosmic-navy w-full sm:w-auto">
+             <span>  Subscribe</span>
               </button>
             </form>
           </div>

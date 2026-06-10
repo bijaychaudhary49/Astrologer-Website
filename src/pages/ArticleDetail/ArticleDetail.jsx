@@ -106,7 +106,7 @@ const ArticleDetail = () => {
             </div>
 
             {/* Author Bio */}
-            <div className="mt-20 p-10 bg-white flex flex-col md:flex-row items-center md:items-start gap-8 border border-theme">
+            <div className="mt-20 p-10 bg-white rounded flex flex-col md:flex-row items-center md:items-start gap-8 border border-theme">
               <div className="w-32 h-32 bg-royal-purple/10 flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-royal-purple text-5xl">
                   person
@@ -146,7 +146,7 @@ const ArticleDetail = () => {
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-12">
             {/* Newsletter */}
-            <div className="bg-cosmic-navy p-10 text-white">
+            <div className="bg-cosmic-navy p-10 rounded text-white">
               <h3 className="font-heading text-xl font-bold mb-4">
                 Cosmic Updates
               </h3>
@@ -165,7 +165,7 @@ const ArticleDetail = () => {
                     type="email"
                   />
                 </div>
-                <button className="w-full bg-white text-cosmic-navy py-4 text-xs font-semibold tracking-widest uppercase hover:bg-white/90 transition-colors">
+                <button className="w-full bg-white rounded-full text-cosmic-navy py-4 text-xs font-semibold tracking-widest uppercase hover:bg-white/90 transition-colors">
                   SUBSCRIBE
                 </button>
               </form>
@@ -202,7 +202,7 @@ const ArticleDetail = () => {
             </div>
 
             {/* Personal Guidance CTA */}
-            <div className="sticky top-28 p-8 border border-theme bg-white">
+            <div className="sticky top-28 p-8 border border-theme rounded bg-white">
               <h4 className="font-heading text-lg font-semibold text-primary mb-4">
                 Personal Guidance
               </h4>
@@ -212,7 +212,7 @@ const ArticleDetail = () => {
               </p>
               <Link
                 to="/services"
-                className="w-full block text-center border-2 border-cosmic-navy py-4 text-xs font-semibold uppercase tracking-widest text-cosmic-navy btn-dwc btn-dwc-fill-dark hover:text-white transition-all"
+                className="w-full block text-center border-2 rounded-full border-cosmic-navy py-4 text-xs font-semibold uppercase tracking-widest text-cosmic-navy btn-dwc btn-dwc-fill-dark hover:text-white transition-all"
               >
                 VIEW SERVICES
               </Link>

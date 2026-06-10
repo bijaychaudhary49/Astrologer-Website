@@ -18,12 +18,12 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <div className="group flex flex-col space-y-4">
+      <div className="group flex flex-col space-y-4 ">
         {/* Product Image Area */}
-        <Link to={`/shop/product/${product.id}`} className="relative aspect-[4/5] bg-white flex items-center justify-center overflow-hidden">
+        <Link to={`/shop/product/${product.id}`} className="relative aspect-square bg-white flex items-center justify-center overflow-hidden">
           <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           {/* Category Badge */}
-          <div className="absolute top-4 left-4 bg-white/90 dark:bg-surface/90 backdrop-blur-md px-3 py-1 border border-theme">
+          <div className="absolute top-4 left-4 bg-white/90 dark:bg-surface/90 backdrop-blur-md px-3 py-1 border rounded-full border-theme">
             <span className="text-[10px] text-primary uppercase font-semibold tracking-widest">
               {product.category}
             </span>
@@ -48,10 +48,10 @@ const ProductCard = ({ product }) => {
         {/* Action Area */}
         <div className="flex items-center gap-4 pt-2">
           {/* Quantity Selector */}
-          <div className="flex items-center border border-theme h-12">
+          <div className="flex items-center border border-theme h-12 rounded-full">
             <button
               onClick={decrementQty}
-              className="px-3 hover:bg-surface-hover transition-colors h-full"
+              className="px-3 hover:bg-surface-hover transition-colors h-full cursor-pointer"
               aria-label="Decrease quantity"
             >
               <FiMinus size={14} className="text-primary" />
@@ -64,7 +64,7 @@ const ProductCard = ({ product }) => {
             />
             <button
               onClick={incrementQty}
-              className="px-3 hover:bg-surface-hover transition-colors h-full"
+              className="px-3 hover:bg-surface-hover transition-colors h-full cursor-pointer"
               aria-label="Increase quantity"
             >
               <FiPlus size={14} className="text-primary" />
@@ -74,7 +74,7 @@ const ProductCard = ({ product }) => {
           {/* Order Button */}
           <button
             onClick={() => setShowModal(true)}
-            className="flex-1 bg-cosmic-navy text-white h-12 text-[10px] font-semibold uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-cosmic-navy/90 active:scale-[0.98] transition-all"
+            className="flex-1 bg-cosmic-navy text-white h-12 text-[10px] cursor-pointer rounded-full font-semibold uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-cosmic-navy/90 active:scale-[0.98] transition-all"
             id={`order-btn-${product.id}`}
           >
             ORDER VIA WHATSAPP

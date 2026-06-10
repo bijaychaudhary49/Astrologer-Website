@@ -23,7 +23,7 @@ const ArticleCard = ({ article, featured = false }) => {
       </span>
 
       {/* Title */}
-      <h3 className="font-heading text-2xl font-bold text-primary mb-3 group-hover:text-royal-purple transition-colors">
+      <h3 className="font-heading text-2xl font-bold text-primary line-clamp-2 mb-3 group-hover:text-royal-purple transition-colors">
         {article.title}
       </h3>
 
@@ -33,8 +33,8 @@ const ArticleCard = ({ article, featured = false }) => {
       </p>
 
       {/* Read More link */}
-      <div className="mt-auto pt-2">
-        <span className="text-xs uppercase tracking-widest font-semibold text-primary group-hover:gap-3 transition-all flex items-center gap-2">
+      <div className="mt-auto pt-2 inline-block">
+        <span className="text-xs uppercase tracking-widest rounded-full font-semibold text-primary border py-3 px-7  group-hover:gap-3 transition-all flex items-center gap-2">
           EXPLORE <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </span>
       </div>

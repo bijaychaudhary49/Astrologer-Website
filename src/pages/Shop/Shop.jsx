@@ -27,7 +27,7 @@ const Shop = () => {
   }
 
   return (
-    <main className="pt-20">
+    <main className="">
       {/* ═══ HERO ═══ */}
       <section className="py-16 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -58,7 +58,7 @@ const Shop = () => {
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
-                className="w-full pl-10 pr-4 py-2.5 rounded bg-primary border border-theme text-primary placeholder-muted text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-full bg-primary border border-theme text-primary placeholder-muted text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all"
               />
             </div>
 
@@ -68,7 +68,7 @@ const Shop = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded text-sm font-medium transition-all duration-200 ${activeCategory === cat
+                  className={`px-4 py-2 rounded-full cursor-pointer text-sm font-medium transition-all duration-200 ${activeCategory === cat
                       ? "bg-royal-purple text-white"
                       : "bg-primary border border-theme text-secondary hover:border-royal-purple/50 hover:text-primary"
                     }`}
@@ -82,7 +82,7 @@ const Shop = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2.5 rounded bg-primary border border-theme text-primary text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all"
+              className="px-4 py-2.5 rounded-full bg-primary border border-theme text-primary text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/50 focus:border-royal-purple transition-all"
             >
               <option value="default">Sort: Default</option>
               <option value="price-low">Price: Low to High</option>
@@ -102,7 +102,7 @@ const Shop = () => {
                 Showing {filteredProducts.length} product
                 {filteredProducts.length !== 1 ? "s" : ""}
               </p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

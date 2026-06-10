@@ -30,14 +30,19 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? "bg-surface/90 backdrop-blur-xl shadow-theme-lg border-b border-theme"
-          : "bg-transparent"
+      className={`z-40 sticky max-w-7xl w-full mx-auto transition-all duration-300 ${
+        scrolled ? "top-4" : "top-0"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div
+        className={`rounded-full px-4 sm:px-6 lg:px-8
+        ${
+          scrolled
+            ? "bg-surface/20 backdrop-blur-xl shadow-theme-lg border-2 border-white"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between py-3">
           {/* Logo */}
           <Link
             to="/"
@@ -77,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3"> */}
             {/* <ThemeToggle /> */}
 
             {/* Mobile Menu Button */}
@@ -93,7 +98,7 @@ const Navbar = () => {
                 <HiOutlineMenuAlt3 size={24} />
               )}
             </button>
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

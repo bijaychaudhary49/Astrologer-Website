@@ -1,6 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { products } from "../../data/products";
+import { IoDiamondOutline } from "react-icons/io5";
+import { MdOutlineSource } from "react-icons/md";
+import { BsStars } from "react-icons/bs";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -66,18 +69,18 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Image Column */}
           <div className="lg:col-span-7">
-            <div className="relative aspect-[4/5] bg-surface-hover overflow-hidden group">
+            <div className="relative aspect-square bg-surface-hover overflow-hidden group">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute top-6 left-6 flex gap-3">
-                <span className="bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest">
+                <span className="bg-white/90 backdrop-blur-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest">
                   {product.category}
                 </span>
                 {product.inStock && (
-                  <span className="bg-cosmic-navy text-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest">
+                  <span className="bg-cosmic-navy text-white rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest">
                     In Stock
                   </span>
                 )}
@@ -111,14 +114,14 @@ const ProductDetail = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-royal-purple text-white w-full py-5 flex items-center justify-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase border-2 border-royal-purple btn-dwc btn-dwc-fill-light hover:text-royal-purple"
+                className="bg-royal-purple rounded-full text-white w-full py-5 flex items-center justify-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase border-2 border-royal-purple btn-dwc btn-dwc-fill-light hover:text-royal-purple"
               >
                 <span className="material-symbols-outlined">chat_bubble</span>
                 <span>Order via WhatsApp</span>
               </a>
               <Link
                 to="/contact"
-                className="border-2 border-cosmic-navy text-cosmic-navy w-full py-5 text-xs font-semibold tracking-[0.2em] uppercase text-center btn-dwc btn-dwc-fill-dark hover:text-white"
+                className="border-2 border-cosmic-navy rounded-full text-cosmic-navy w-full py-5 text-xs font-semibold tracking-[0.2em] uppercase text-center btn-dwc btn-dwc-fill-dark hover:text-white"
               >
                 Schedule Astro-Consultation
               </Link>
@@ -146,7 +149,7 @@ const ProductDetail = () => {
                 <div className="border-b border-theme pb-0">
                   <button
                     onClick={() => toggleSection("vedic")}
-                    className="w-full flex justify-between items-center py-6 text-left group"
+                    className="w-full flex justify-between items-center py-6 text-left group cursor-pointer"
                   >
                     <span className="text-xs font-semibold text-primary uppercase tracking-widest">
                       Vedic Properties
@@ -189,7 +192,7 @@ const ProductDetail = () => {
               <div className="border-b border-theme pb-0">
                 <button
                   onClick={() => toggleSection("details")}
-                  className="w-full flex justify-between items-center py-6 text-left group"
+                  className="w-full flex justify-between items-center py-6 text-left group cursor-pointer"
                 >
                   <span className="text-xs font-semibold text-primary uppercase tracking-widest">
                     Product Details
@@ -236,7 +239,7 @@ const ProductDetail = () => {
               <div className="border-b border-theme pb-0">
                 <button
                   onClick={() => toggleSection("shipping")}
-                  className="w-full flex justify-between items-center py-6 text-left group"
+                  className="w-full flex justify-between items-center py-6 text-left group cursor-pointer"
                 >
                   <span className="text-xs font-semibold text-primary uppercase tracking-widest">
                     Shipping & Returns
@@ -280,21 +283,21 @@ const ProductDetail = () => {
               aesthetic brilliance, but for its vibrational alignment with
               celestial movements.
             </p>
-            <div className="flex justify-center gap-12">
+            <div className="flex justify-center items-center gap-12">
               <div className="flex flex-col items-center">
-                <span className="material-symbols-outlined text-4xl mb-2">auto_awesome</span>
+                <span className="material-symbols-outlined text-4xl mb-2"><BsStars/></span>
                 <span className="text-xs font-semibold uppercase tracking-widest">
                   Vedic Purity
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">💎</span>
+                <span className="text-3xl mb-2"><IoDiamondOutline/></span>
                 <span className="text-xs font-semibold uppercase tracking-widest">
                   Master Cut
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl mb-2">📜</span>
+                <span className="text-3xl mb-2"><MdOutlineSource/></span>
                 <span className="text-xs font-semibold uppercase tracking-widest">
                   Legacy Sourced
                 </span>
