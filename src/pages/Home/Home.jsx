@@ -56,7 +56,7 @@ const Home = () => {
             {/* Left: Text */}
             <div className="animate-slide-up">
               <div className="flex items-center gap-2 mb-6">
-                <BsStars className="text-royal-purple" />
+                {/* <BsStars className="text-royal-purple" /> */}
                 <span className="text-xs font-semibold text-royal-purple tracking-[0.1em] uppercase">
                   Vedic Astrology & Spiritual Guidance
                 </span>
